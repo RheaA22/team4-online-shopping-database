@@ -2,37 +2,33 @@
 # Sample customers blueprint of endpoints
 # Remove this file if you are not using it in your project
 ########################################################
-from flask import Blueprint
-from flask import request
-from flask import jsonify
-from flask import make_response
-from flask import current_app
+from flask import Blueprint, request, jsonify, make_response, current_app
 from backend.db_connection import db
 from backend.ml_models.model01 import predict
 
-#------------------------------------------------------------
+# ------------------------------------------------------------
 # Create a new Blueprint object, which is a collection of 
 # routes.
 customers = Blueprint('customers', __name__)
 
 
-#------------------------------------------------------------
+# ------------------------------------------------------------
 # Get all customers from the system
 @customers.route('/customers', methods=['GET'])
 def get_customers():
-
     cursor = db.get_db().cursor()
     cursor.execute('''SELECT id, company, last_name,
                     first_name, job_title, business_phone FROM customers
     ''')
-    
+
     theData = cursor.fetchall()
-    
+
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response
 
-#------------------------------------------------------------
+
+# ------------------------------------------------------------
 # Update customer info for customer with particular userID
 #   Notice the manner of constructing the query.
 @customers.route('/customers', methods=['PUT'])
@@ -51,7 +47,8 @@ def update_customer():
     db.get_db().commit()
     return 'customer updated!'
 
-#------------------------------------------------------------
+
+# ------------------------------------------------------------
 # Get customer detail for customer with particular userID
 #   Notice the manner of constructing the query. 
 @customers.route('/customers/<userID>', methods=['GET'])
@@ -59,14 +56,15 @@ def get_customer(userID):
     current_app.logger.info('GET /customers/<userID> route')
     cursor = db.get_db().cursor()
     cursor.execute('SELECT id, first_name, last_name FROM customers WHERE id = {0}'.format(userID))
-    
+
     theData = cursor.fetchall()
-    
+
     the_response = make_response(jsonify(theData))
     the_response.status_code = 200
     return the_response
 
-#------------------------------------------------------------
+
+# ------------------------------------------------------------
 # Makes use of the very simple ML model in to predict a value
 # and returns it to the user
 @customers.route('/prediction/<var01>/<var02>', methods=['GET'])
