@@ -1,8 +1,42 @@
-from flask import Blueprint
+from flask import Blueprint, request, jsonify
 
-products_bp = Blueprint('products', __name__)
+products_bp = Blueprint('products_bp', __name__)
+
+products = {
+    1: {"name": "T-shirt", "price": 19.99, "stock": True},
+    2: {"name": "Jeans", "price": 49.99, "stock": True}
+}
 
 
 @products_bp.route('/products', methods=['GET'])
-def get_products():
-    return {"message": "List of products"}
+def get_all_products():
+    return jsonify(list(products.values()))
+
+
+@products_bp.route('/products/<int:product_id>', methods=['GET'])
+def get_product(product_id):
+    return jsonify(products.get(product_id, {}))
+
+
+@products_bp.route('/products', methods=['POST'])
+def add_product():
+    data = request.json
+    new_id = max(products.keys()) + 1
+    products[new_id] = data
+    return jsonify({"message": "Product added", "id": new_id}), 201
+
+
+@products_bp.route('/products/<int:product_id>', methods=['PUT'])
+def update_product(product_id):
+    if product_id in products:
+        products[product_id].update(request.json)
+        return jsonify({"message": "Product updated"})
+    return jsonify({"error": "Product not found"}), 404
+
+
+@products_bp.route('/products/<int:product_id>', methods=['DELETE'])
+def mark_out_of_stock(product_id):
+    if product_id in products:
+        products[product_id]['stock'] = False
+        return jsonify({"message": "Marked out of stock"})
+    return jsonify({"error": "Product not found"}), 404
