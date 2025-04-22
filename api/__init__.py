@@ -1,8 +1,8 @@
 from flask import Flask
-from .products.routes import products_bp
-from .categories.routes import categories_bp
-from .users.routes import users_bp
-from .orders.routes import orders_bp
+from api.backend.products.routes import products_bp
+from api.backend.categories.routes import categories_bp
+from api.backend.users.routes import users_bp
+from api.backend.orders import orders_bp
 
 
 def create_app():

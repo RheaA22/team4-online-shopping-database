@@ -4,7 +4,7 @@ services:
     build: ./app
     container_name: web-app-test
     hostname: web-app
-    volumes: ["./app/src:/appcode"]
+    volumes: [ "./app/src:/appcode" ]
     ports:
       - 8502:8501
 
@@ -12,13 +12,13 @@ services:
     build: ./api
     container_name: web-api-test
     hostname: web-api
-    volumes: ["./api:/apicode"]
+    volumes: [ "./api:/apicode" ]
     ports:
       - 4001:4000
 
   db-test:
     env_file:
-      - ./api/.env
+      - api/other/.env
     image: mysql:9
     container_name: mysql-db-test
     hostname: db
