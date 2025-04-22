@@ -18,6 +18,19 @@ def get_product(product_id):
     return jsonify(products.get(product_id, {}))
 
 
+@products_bp.route('/products/instock', methods=['GET'])
+def get_instock_products():
+    instock = [p for p in products.values() if p['stock']]
+    return jsonify(instock)
+
+
+@products_bp.route('/products/search', methods=['POST'])
+def search_products():
+    keyword = request.json.get("keyword", "").lower()
+    results = [p for p in products.values() if keyword in p['name'].lower()]
+    return jsonify(results)
+
+
 @products_bp.route('/products', methods=['POST'])
 def add_product():
     data = request.json
