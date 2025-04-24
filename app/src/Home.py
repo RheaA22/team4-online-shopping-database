@@ -57,13 +57,13 @@ if st.button("Act as Mike, a Store Manager",
     logger.info("Logging in as Store Manager Persona")
     st.switch_page('pages/00_Store_Manager_Home.py')
 
-if st.button('Act as Lia, an Eco-concious Teen', 
+if st.button('Act as Lia, an Eco-conscious Teen', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'eco-concious_teen'
+    st.session_state['role'] = 'eco-conscious_teen'
     st.session_state['first_name'] = 'Lia'
-    st.switch_page('pages/10_Eco-Concious_Teen_Home.py')
+    st.switch_page('pages/10_Eco-Conscious_Teen_Home.py')
 
 if st.button('Act as Max, a Sensory-Sensitive Shopper', 
             type = 'primary', 
