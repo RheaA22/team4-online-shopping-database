@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from modules.nav import SideBarLinks
 from modules.db import execute_query
+import requests
 
 logger = logging.getLogger(__name__)
 
