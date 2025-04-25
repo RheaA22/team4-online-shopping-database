@@ -1,5 +1,6 @@
 import logging
 logger = logging.getLogger(__name__)
+import requests
 
 import streamlit as st
 from modules.nav import SideBarLinks
@@ -14,17 +15,17 @@ st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
-if st.button('Browse Sustainable Products', 
+if st.button('Browse Sustainable Categories', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/11_Sustainable_Products.py')
+  st.switch_page('pages/11_Sustainable_Categories_View.py')
 
-if st.button('View Eco Events', 
+if st.button('View Eco-Friendly Categories', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/12_Eco_Events_View.py')
+  st.switch_page('pages/12_Eco_Products_View.py')
 
-if st.button("Review Management Info",
+if st.button("Track My Order",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/13_Product_Reviews_Viewer.py')
+  st.switch_page('pages/13_Orders_Tracker.py')

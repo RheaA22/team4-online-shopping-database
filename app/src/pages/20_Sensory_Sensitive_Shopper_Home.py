@@ -9,19 +9,19 @@ st.set_page_config(layout = 'wide')
 
 SideBarLinks()
 
-st.title('Trend Focused Influencer Home Page')
+st.title('Sensory Sensitive Shopper Home Page')
 
-if st.button('View Trend Dashboard', 
+if st.button('View Sensory Friendly Products', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/32_Trend_Dashboard.py')
+  st.switch_page('pages/21_Sensory_Friendly_Products.py')
 
-if st.button('Create a Trend-Focused Order', 
+if st.button('Build Product Preferences', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/33_Create_Trendy_Order.py')
+  st.switch_page('pages/22_Personalize_Preferences.py')
 
-if st.button('View Saved Looks', 
+if st.button('Find My Orders', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/34_Save_Products.py')
+  st.switch_page('pages/23_Order_Finder.py')

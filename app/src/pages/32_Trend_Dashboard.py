@@ -1,25 +1,28 @@
 import streamlit as st
-import plotly.express as px
+import requests
+from collections import Counter
 from modules.nav import SideBarLinks
 
 SideBarLinks()
 st.header("Trend Dashboard")
 
-# Fetch trend data from API - using made up API link
-trends = requests.get("https://fashion-api.example.com/trends").json()
+#Get Order and Products
+orders = requests.get("http://localhost:5000/orders").json()
+products = requests.get("http://localhost:5000/products").json()
+product_lookup = {p["sku"]: p for p in products}
 
-# Trend growth chart
-df = pd.DataFrame(trends["categories"])
-fig = px.bar(df, x="category", y="growth", color="growth")
-st.plotly_chart(fig)
+#Count product appearances
+all_items = []
+for order in orders:
+    all_items.extend(order["products"])  # assuming each order has "products": [SKUs]
 
-# Top trending items
-st.subheader("Hottest Items Now")
-cols = st.columns(3)
-for i, item in enumerate(trends["items"][:3]):
-    with cols[i]:
-        st.image(item["image"], width=150)
-        st.write(f"**{item['name']}**")
-        st.write(f"+{item['growth']}% interest")
-        if st.button("Track", key=f"track_{i}"):
-            requests.post("https://fashion-api.example.com/track", json={"item_id": item["id"]})
+top_skus = Counter(all_items).most_common(5)
+
+#Display trending products
+for sku, count in top_skus:
+    p = product_lookup.get(sku)
+    if p:
+        st.subheader(p["name"])
+        st.write(f"📦 Ordered {count} times")
+        st.write(f"💲 ${p['price']}")
+        st.markdown("---")
