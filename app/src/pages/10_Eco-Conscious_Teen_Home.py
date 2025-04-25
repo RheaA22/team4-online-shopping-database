@@ -15,7 +15,7 @@ st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
-if st.button('Browse Sustainable Products', 
+if st.button('Browse Sustainable Categories', 
              type='primary',
              use_container_width=True):
   st.switch_page('pages/11_Sustainable_Categories_View.py')
