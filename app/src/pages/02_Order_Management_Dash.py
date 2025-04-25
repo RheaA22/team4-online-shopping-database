@@ -4,6 +4,7 @@ import pandas as pd
 from modules.nav import SideBarLinks
 from modules.db import execute_query
 from datetime import datetime
+import requests
 
 logger = logging.getLogger(__name__)
 
