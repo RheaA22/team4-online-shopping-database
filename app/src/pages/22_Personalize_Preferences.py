@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from modules.nav import SideBarLinks
 
-
 SideBarLinks()
 st.header("Product Preferences")
 
@@ -13,7 +12,7 @@ if st.button("Update Preferences"):
     payload = {
         "preferences": preferences
     }
-    res = requests.put(f"http://localhost:5000/users/{user_id}", json=payload)
+    res = requests.put(f"http://localhost:8501/users/{user_id}", json=payload)
     if res.ok:
         st.success("Preferences updated!")
     else:

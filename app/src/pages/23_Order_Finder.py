@@ -2,15 +2,13 @@ import streamlit as st
 import requests
 from modules.nav import SideBarLinks
 
-
-
 SideBarLinks()
 st.header("Find Adaptive Clothing")
 
 customer_id = st.text_input("🔐 Customer ID", key="cust_id")
 
 if st.button("View My Orders"):
-    orders = requests.get("http://localhost:5000/orders").json()
+    orders = requests.get("http://localhost:8501/orders").json()
     user_orders = [o for o in orders if o["customer_id"] == customer_id]
 
     if user_orders:

@@ -2,7 +2,6 @@ import logging
 import streamlit as st
 import pandas as pd
 from modules.nav import SideBarLinks
-from modules.db import execute_query
 import requests
 
 logger = logging.getLogger(__name__)
@@ -12,7 +11,7 @@ SideBarLinks()
 st.header('Sustainable Fashion Products')
 
 # Get all products
-response = requests.get("http://localhost:5000/products")
+response = requests.get("http://localhost:8501/products")
 if response.ok:
     products = response.json()
     eco_keywords = ["sustainable", "organic", "eco", "recycled", "vegan"]

@@ -7,7 +7,7 @@ st.header("Create My Trendy Order")
 
 name = st.text_input("Name")
 email = st.text_input("Email")
-products = requests.get("http://localhost:5000/products").json()
+products = requests.get("http://localhost:8501/products").json()
 
 selected_skus = st.multiselect(
     "Choose products to match your vibe:",
@@ -20,7 +20,7 @@ if st.button("Place Order"):
         "customer": {"name": name, "email": email},
         "products": selected_skus
     }
-    res = requests.post("http://localhost:5000/orders", json=payload)
+    res = requests.post("http://localhost:8501/orders", json=payload)
     if res.ok:
         st.success("Order placed!")
     else:

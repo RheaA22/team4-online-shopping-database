@@ -6,7 +6,7 @@ SideBarLinks()
 st.header("Sensory Friendly Products")
 
 # GET all products
-resp = requests.get("http://localhost:5000/products")
+resp = requests.get("http://localhost:8501/products")
 if resp.ok:
     all_products = resp.json()
     keywords = ["soft", "tagless", "breathable", "seamless", "cotton", "gentle", "muted"]

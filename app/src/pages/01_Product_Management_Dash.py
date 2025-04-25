@@ -2,7 +2,6 @@ import logging
 import streamlit as st
 import pandas as pd
 from modules.nav import SideBarLinks
-from modules.db import execute_query
 import requests
 
 logger = logging.getLogger(__name__)
@@ -13,13 +12,12 @@ SideBarLinks()
 # set the header of the page
 st.header('Product Management Dashboard')
 
-
 # You can access the session state to make a more customized/personalized app experience
 st.write(f"### Hi, {st.session_state['first_name']}.")
 
 # View all products
 if st.button("🔍 View Current Inventory"):
-    response = requests.get("http://localhost:5000/products")
+    response = requests.get("http://localhost:8501/products")
     if response.ok:
         st.table(response.json())
 
@@ -32,7 +30,7 @@ with st.form("add_product"):
     submit = st.form_submit_button("Add Product")
     if submit:
         data = {"name": name, "price": price, "category_id": category_id}
-        r = requests.post("http://localhost:5000/products", json=data)
+        r = requests.post("http://localhost:8501/products", json=data)
         st.success("✅ Product added!" if r.ok else "❌ Error adding product")
 
 # Update product
@@ -44,12 +42,12 @@ with st.form("update_product"):
     submit_update = st.form_submit_button("Update Product")
     if submit_update:
         data = {"price": new_price, "tags": tags.split(",")}
-        r = requests.put(f"http://localhost:5000/products/{pid}", json=data)
+        r = requests.put(f"http://localhost:8501/products/{pid}", json=data)
         st.success("✅ Product updated!" if r.ok else "❌ Update failed")
 
 # Mark product as out of stock
 st.subheader("Mark Product as Out of Stock")
 product_id = st.text_input("Product ID to mark as out of stock")
 if st.button("Mark Out of Stock"):
-    r = requests.delete(f"http://localhost:5000/products/{product_id}")
+    r = requests.delete(f"http://localhost:8501/products/{product_id}")
     st.success("✅ Product marked out of stock" if r.ok else "❌ Failed")
