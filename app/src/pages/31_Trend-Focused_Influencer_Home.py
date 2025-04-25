@@ -16,12 +16,12 @@ if st.button('View Trend Dashboard',
              use_container_width=True):
   st.switch_page('pages/32_Trend_Dashboard.py')
 
-if st.button('View Viral Alerts', 
+if st.button('Create a Trend-Focused Order', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/33_Viral_Alerts_Systemd.py')
+  st.switch_page('pages/33_Create_Trendy_Order.py')
 
-if st.button('View Purchase Assistant', 
+if st.button('View Saved Looks', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/34_Purchase_Assistant.py')
+  st.switch_page('pages/34_Save_Products.py')
