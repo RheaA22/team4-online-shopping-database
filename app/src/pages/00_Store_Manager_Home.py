@@ -14,17 +14,17 @@ st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
-if st.button('View Employee Management Dashboard', 
+if st.button('View Product Management Dashboard', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/01_Employee_Management_Dash.py')
+  st.switch_page('pages/01_Product_Management_Dash.py')
 
-if st.button('View Virtual Event Tracker', 
+if st.button('View Order Management Dashboard', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/02_Virtual_Event_Tracker.py')
+  st.switch_page('pages/02_Order_Management_Dash.py')
 
-if st.button('View Advertisement Creation', 
+if st.button('Manage Categories', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/05_Advertisement_Creation.py')
+  st.switch_page('pages/05_Category_Management.py')
