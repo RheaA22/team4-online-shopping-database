@@ -13,14 +13,14 @@ st.header('Order Management Dashboard')
 
 # View all orders
 if st.button("View All Orders"):
-    r = requests.get("http://localhost:8501/orders")
+    r = requests.get("http://localhost:4000/orders")
     if r.ok:
         st.table(r.json())
 
 # View single order
 order_id = st.text_input("Order ID to view")
 if st.button("🔍 View Order Details"):
-    r = requests.get(f"http://localhost:8501/orders/{order_id}")
+    r = requests.get(f"http://localhost:4000/orders/{order_id}")
     if r.ok:
         st.json(r.json())
 
@@ -31,5 +31,5 @@ with st.form("update_order"):
     status = st.selectbox("New Status", ["Pending", "Shipped", "Delivered", "Cancelled"])
     submit = st.form_submit_button("Update Order")
     if submit:
-        r = requests.put(f"http://localhost:8501/orders/{oid}", json={"status": status})
+        r = requests.put(f"http://localhost:4000/orders/{oid}", json={"status": status})
         st.success("✅ Order updated" if r.ok else "❌ Update failed")

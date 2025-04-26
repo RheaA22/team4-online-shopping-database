@@ -7,8 +7,8 @@ SideBarLinks()
 st.header("Trend Dashboard")
 
 # Get Order and Products
-orders = requests.get("http://localhost:8501/orders").json()
-products = requests.get("http://localhost:8501/products").json()
+orders = requests.get("http://localhost:4000/orders").json()
+products = requests.get("http://localhost:4000/products").json()
 product_lookup = {p["sku"]: p for p in products}
 
 # Count product appearances

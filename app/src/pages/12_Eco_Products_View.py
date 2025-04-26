@@ -11,7 +11,7 @@ SideBarLinks()
 st.header('Sustainable Fashion Products')
 
 # Get all products
-response = requests.get("http://localhost:8501/products")
+response = requests.get("http://localhost:4000/products")
 if response.ok:
     products = response.json()
     eco_keywords = ["sustainable", "organic", "eco", "recycled", "vegan"]

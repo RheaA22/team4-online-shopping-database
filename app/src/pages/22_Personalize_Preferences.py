@@ -12,7 +12,7 @@ if st.button("Update Preferences"):
     payload = {
         "preferences": preferences
     }
-    res = requests.put(f"http://localhost:8501/users/{user_id}", json=payload)
+    res = requests.put(f"http://localhost:4000/users/{user_id}", json=payload)
     if res.ok:
         st.success("Preferences updated!")
     else:
