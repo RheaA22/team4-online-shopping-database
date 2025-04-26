@@ -1,4 +1,4 @@
-USE team4_online_shopping_database;
+USE db;
 create table Company (
 	companyID INT,
 	name VARCHAR(50),

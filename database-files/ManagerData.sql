@@ -1,4 +1,4 @@
-USE team4_online_shopping_database;
+USE db;
 create table Manager (
 	manager_id INT,
 	managerLevel VARCHAR(50)

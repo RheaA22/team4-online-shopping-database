@@ -1,4 +1,4 @@
-USE team4_online_shopping_database;
+USE db;
 create table Product (
 	SKU VARCHAR(50),
 	brandID INT,

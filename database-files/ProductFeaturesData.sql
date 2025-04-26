@@ -1,4 +1,4 @@
-USE team4_online_shopping_database;
+USE db;
 create table ProductFeatures (
 	SKU VARCHAR(50),
 	feature VARCHAR(50)

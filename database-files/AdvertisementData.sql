@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS team4_online_shopping_database;
+CREATE DATABASE IF NOT EXISTS db;
 
-USE team4_online_shopping_database;
+USE db;
 
 create table Advertisement (
 	adID INT,
