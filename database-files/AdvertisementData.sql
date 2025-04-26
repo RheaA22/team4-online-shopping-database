@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS team4_online_shopping_database;
+
+USE team4_online_shopping_database;
+
 create table Advertisement (
 	adID INT,
 	companyID INT,

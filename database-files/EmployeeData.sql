@@ -1,3 +1,4 @@
+USE team4_online_shopping_database;
 create table Employee (
 	employee_id INT,
 	first_name VARCHAR(50),

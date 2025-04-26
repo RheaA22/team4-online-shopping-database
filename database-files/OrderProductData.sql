@@ -1,3 +1,4 @@
+USE team4_online_shopping_database;
 create table OrderProduct (
 	orderID INT,
 	SKU VARCHAR(50),

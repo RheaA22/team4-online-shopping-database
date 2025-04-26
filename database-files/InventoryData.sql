@@ -1,3 +1,4 @@
+USE team4_online_shopping_database;
 create table Inventory (
 	storeID INT,
 	SKU VARCHAR(50),

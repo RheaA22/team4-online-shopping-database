@@ -1,3 +1,4 @@
+USE team4_online_shopping_database;
 create table Store (
 	store_id INT,
 	name VARCHAR(50),

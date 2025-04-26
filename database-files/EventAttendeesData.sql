@@ -1,3 +1,4 @@
+USE team4_online_shopping_database;
 create table EventAttendees (
 	eventID INT,
 	customerID INT

@@ -5,6 +5,7 @@ from modules.nav import SideBarLinks
 import requests
 
 logger = logging.getLogger(__name__)
+BASE_URL = "http://web-api:4000"
 
 # Call the SideBarLinks from the nav module in the modules directory
 SideBarLinks()
@@ -17,7 +18,7 @@ st.write(f"### Hi, {st.session_state['first_name']}.")
 
 # View all products
 if st.button("🔍 View Current Inventory"):
-    response = requests.get("http://localhost:4000/products")
+    response = requests.get(f"{BASE_URL}/products")
     if response.ok:
         st.table(response.json())
 
@@ -30,7 +31,7 @@ with st.form("add_product"):
     submit = st.form_submit_button("Add Product")
     if submit:
         data = {"name": name, "price": price, "category_id": category_id}
-        r = requests.post("http://localhost:4000/products", json=data)
+        r = requests.post(f"{BASE_URL}/products", json=data)
         st.success("✅ Product added!" if r.ok else "❌ Error adding product")
 
 # Update product
