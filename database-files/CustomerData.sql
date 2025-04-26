@@ -1,0 +1,101 @@
+USE db;
+create table Customer (
+	customer_id INT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	age INT,
+	address VARCHAR(50),
+	middle_name VARCHAR(50)
+);
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (1, 'Mickie', 'Beagin', 'abeagin0@bbc.co.uk', 73, '123 hello lane', 'Ashlin');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (2, 'Brod', 'Tee', 'vtee1@ustream.tv', 61, '565 bye lane', 'Valentijn');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (3, 'Waring', 'Tieraney', 'ntieraney2@reference.com', 21, '564 bye lane', 'Nikolaus');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (4, 'Storm', 'Dani', 'rdani3@va.gov', 3, '562 bye lane', 'Ruperto');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (5, 'Idalina', 'Ozanne', 'fozanne4@skype.com', 29, '562 okay drive', 'Fayette');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (6, 'Catrina', 'Gershom', 'pgershom5@ameblo.jp', 31, '162 okay drive', 'Philbert');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (7, 'Alain', 'Babington', 'tbabington6@furl.net', 55, '262 okay drive', 'Tatum');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (8, 'Robers', 'Adhams', 'kadhams7@sourceforge.net', 95, '362 okay drive', 'Kristofor');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (9, 'Rodie', 'Taplow', 'ltaplow8@japanpost.jp', 62, '662 okay drive', 'Lilias');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (10, 'Evvy', 'Addyman', 'maddyman9@bloglines.com', 17, '665 okay drive', 'Marlee');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (11, 'Gunter', 'Scamerdine', 'ascamerdinea@squidoo.com', 53, '665 cornelia drive', 'Alan');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (12, 'Kele', 'Martyn', 'hmartynb@seattletimes.com', 67, '665 cornelia lane', 'Herbie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (13, 'Merrill', 'Strang', 'hstrangc@bing.com', 20, '123 mihira street', 'Hilda');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (14, 'Worthington', 'Scriven', 'dscrivend@ucoz.ru', 94, '123 rhea lane', 'Delmer');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (15, 'Becki', 'MacCrackan', 'kmaccrackane@guardian.co.uk', 61, '123 mahi drive', 'Katti');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (16, 'Demetrius', 'Anderson', 'vandersonf@opensource.org', 30, '123 jarosa lane', 'Valina');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (17, 'Elicia', 'Durno', 'edurnog@reference.com', 70, '567 lebron avenue', 'Esra');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (18, 'Hilarius', 'Espinel', 'jespinelh@live.com', 82, '462 lebron drive', 'Judon');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (19, 'Decca', 'Sherry', 'vsherryi@theguardian.com', 47, '463 lebron drive', 'Viola');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (20, 'Kacy', 'Rozzell', 'mrozzellj@unblog.fr', 75, '464 lebron drive', 'Meredeth');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (21, 'Jade', 'Plowman', 'eplowmank@jugem.jp', 13, '465 lebron drive', 'Elga');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (22, 'Lotti', 'Finnie', 'afinniel@wikispaces.com', 46, '466 lebron drive', 'Aaren');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (23, 'Meade', 'Dragonette', 'gdragonettem@miitbeian.gov.cn', 77, '467 lebron drive', 'Griselda');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (24, 'Tonnie', 'Conroy', 'tconroyn@salon.com', 31, '468 lebron drive', 'Temple');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (25, 'Lorianne', 'Everill', 'aeverillo@ifeng.com', 50, '469 lebron drive', 'Alexandre');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (26, 'Darbie', 'Jecks', 'pjecksp@mozilla.com', 41, '321 lebron drive', 'Paola');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (27, 'Katinka', 'Coit', 'bcoitq@about.me', 19, '322 lebron drive', 'Bessie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (28, 'Constantia', 'Scanlon', 'mscanlonr@unesco.org', 78, '323 lebron drive', 'Maggee');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (29, 'Nevsa', 'Durnan', 'adurnans@wix.com', 54, '324 lebron drive', 'Averyl');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (30, 'Ludovika', 'Andrysek', 'aandrysekt@latimes.com', 18, '325 lebron drive', 'Addy');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (31, 'Enrika', 'Jarrett', 'jjarrettu@discovery.com', 47, '326 lebron drive', 'Juieta');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (32, 'Ban', 'Dearman', 'cdearmanv@spiegel.de', 40, '327 lebron drive', 'Cordie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (33, 'Niall', 'Rapo', 'srapow@time.com', 68, '328 lebron drive', 'Sigfrid');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (34, 'Charin', 'Sampey', 'asampeyx@intel.com', 25, '329 lebron drive', 'Annabella');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (35, 'Kiersten', 'Checci', 'bchecciy@google.ca', 15, '611 sabrina drive', 'Bradford');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (36, 'Paulita', 'MacChaell', 'dmacchaellz@squidoo.com', 14, '612 sabrina drive', 'Daloris');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (37, 'Celestyn', 'McNirlan', 'rmcnirlan10@photobucket.com', 97, '613 sabrina drive', 'Rudd');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (38, 'Ilysa', 'Bithell', 'vbithell11@gravatar.com', 77, '614 sabrina drive', 'Vere');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (39, 'Berta', 'Dunseith', 'gdunseith12@zimbio.com', 87, '615 sabrina drive', 'Gregoor');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (40, 'Orelee', 'Duckering', 'educkering13@cdbaby.com', 58, '616 sabrina drive', 'Ethyl');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (41, 'Armando', 'Glisenan', 'cglisenan14@github.io', 28, '617 sabrina drive', 'Cristi');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (42, 'Lucais', 'Reiner', 'greiner15@xinhuanet.com', 41, '618 sabrina drive', 'Guillermo');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (43, 'Jessy', 'Statter', 'mstatter16@thetimes.co.uk', 71, '619 sabrina drive', 'Merlina');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (44, 'Albie', 'O''Growgane', 'aogrowgane17@timesonline.co.uk', 8, '610 sabrina drive', 'Annemarie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (45, 'Derry', 'Wearden', 'dwearden18@tamu.edu', 95, '620 sabrina drive', 'Dud');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (46, 'Klara', 'Gawthorp', 'fgawthorp19@google.ca', 35, '621 sabrina drive', 'Flossy');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (47, 'Erie', 'Coupman', 'icoupman1a@prnewswire.com', 42, '622 sabrina drive', 'Isaac');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (48, 'Clovis', 'Daughtrey', 'adaughtrey1b@apache.org', 13, '623 sabrina drive', 'Agosto');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (49, 'Kiel', 'Sutherland', 'osutherland1c@bandcamp.com', 56, '624 sabrina drive', 'Ofilia');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (50, 'Blanca', 'Ashton', 'aashton1d@ucoz.com', 40, '625 sabrina drive', 'Athena');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (51, 'Lauraine', 'Naldrett', 'snaldrett1e@paypal.com', 44, '626 sabrina drive', 'Shurwood');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (52, 'Cary', 'Benzing', 'tbenzing1f@fda.gov', 99, '627 sabrina drive', 'Thorpe');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (53, 'Valerye', 'Lordon', 'blordon1g@chron.com', 56, '628 sabrina drive', 'Beatrice');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (54, 'Martyn', 'Dilks', 'ddilks1h@php.net', 39, '629 sabrina drive', 'Ddene');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (55, 'Sybil', 'Perfili', 'fperfili1i@ebay.com', 93, '630 sabrina drive', 'Free');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (56, 'Lee', 'Davids', 'vdavids1j@multiply.com', 20, '631 sabrina drive', 'Victoir');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (57, 'Wainwright', 'Lusher', 'klusher1k@washingtonpost.com', 74, '632 sabrina drive', 'Krishnah');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (58, 'Barret', 'Danjoie', 'bdanjoie1l@spotify.com', 98, '633 sabrina drive', 'Boris');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (59, 'Lydie', 'Abramovicz', 'mabramovicz1m@joomla.org', 86, '634 sabrina drive', 'Moss');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (60, 'Hulda', 'Lavin', 'dlavin1n@mysql.com', 36, '635 sabrina drive', 'Dulce');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (61, 'Stavros', 'Le Clercq', 'mleclercq1o@google.cn', 20, '636 sabrina drive', 'Micheline');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (62, 'Norry', 'Nazair', 'mnazair1p@mtv.com', 41, '637 sabrina drive', 'Marianna');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (63, 'Kimbell', 'Challoner', 'echalloner1q@exblog.jp', 40, '638 sabrina drive', 'Edd');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (64, 'Joyann', 'Coster', 'acoster1r@bbb.org', 12, '639 sabrina drive', 'Abbie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (65, 'Wallas', 'Klauber', 'mklauber1s@macromedia.com', 95, '640 sabrina drive', 'Manuel');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (66, 'Ella', 'Stanesby', 'hstanesby1t@canalblog.com', 19, '641 sabrina drive', 'Halimeda');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (67, 'Jeannine', 'Orys', 'korys1u@youku.com', 92, '642 sabrina drive', 'Karrah');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (68, 'Giordano', 'Pitson', 'dpitson1v@soundcloud.com', 25, '643 sabrina drive', 'Domenic');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (69, 'Byrle', 'Flucker', 'kflucker1w@smh.com.au', 50, '644 sabrina drive', 'Keefe');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (70, 'Jeffy', 'Lighten', 'clighten1x@arstechnica.com', 21, '645 sabrina drive', 'Claybourne');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (71, 'Laurence', 'Bedwell', 'gbedwell1y@gmpg.org', 100, '646 sabrina drive', 'Gaylene');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (72, 'Ashia', 'Manwell', 'dmanwell1z@wsj.com', 38, '647 sabrina drive', 'Debbie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (73, 'Shawn', 'Ousby', 'nousby20@ebay.co.uk', 38, '648 sabrina drive', 'Noach');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (74, 'Ines', 'Adami', 'padami21@bigcartel.com', 100, '649 sabrina drive', 'Paquito');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (75, 'Conchita', 'Petheridge', 'jpetheridge22@bravesites.com', 17, '810 database lane', 'Jennine');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (76, 'Armin', 'Satyford', 'bsatyford23@liveinternet.ru', 48, '811 database lane', 'Brendan');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (77, 'Richart', 'Potteril', 'cpotteril24@sun.com', 87, '812 database lane', 'Carlynn');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (78, 'Dannie', 'Hallock', 'ohallock25@people.com.cn', 91, '813 database lane', 'Oralia');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (79, 'Carrol', 'de Najera', 'edenajera26@nytimes.com', 76, '814 database lane', 'Emmy');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (80, 'Devon', 'Planke', 'oplanke27@nationalgeographic.com', 13, '815 database lane', 'Orrin');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (81, 'Blancha', 'Drinkel', 'gdrinkel28@biglobe.ne.jp', 13, '816 database lane', 'Goldarina');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (82, 'Rodie', 'Lankester', 'jlankester29@japanpost.jp', 9, '817 database lane', 'Jannel');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (83, 'Velvet', 'Wilne', 'twilne2a@facebook.com', 65, '818 database lane', 'Tibold');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (84, 'Doll', 'Pierrepoint', 'jpierrepoint2b@intel.com', 17, '819 database lane', 'Jodie');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (85, 'Ike', 'Ormerod', 'gormerod2c@unicef.org', 28, '110 computer court', 'Gilbertina');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (86, 'Daryle', 'Larkin', 'wlarkin2d@yolasite.com', 70, '111 computer court', 'Wash');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (87, 'Becky', 'Tricker', 'ltricker2e@tripadvisor.com', 65, '112 computer court', 'Lianne');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (88, 'Shandra', 'Tander', 'ftander2f@washingtonpost.com', 39, '113 computer court', 'Ferguson');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (89, 'Carey', 'Lanyon', 'alanyon2g@com.com', 23, '115 computer court', 'Ara');
+insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (90, 'Hiram', 'Medlen', 'cmedlen2h@gnu.org', 81, '114 computer court', 'Conni');
+

@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 # RUN mkdir /requirements
 # COPY ./src/requirements.txt /requirements/requirements.txt
 
-COPY ./src/requirements.txt .
+COPY src/requirements.txt .
 
 RUN pip3 install -r requirements.txt
 

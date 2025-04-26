@@ -12,3 +12,8 @@ def create_app():
     app.register_blueprint(users_bp, url_prefix='/api')
     app.register_blueprint(orders_bp, url_prefix='/api')
     return app
+
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(port=4000)

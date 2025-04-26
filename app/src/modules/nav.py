@@ -14,45 +14,74 @@ def AboutPageNav():
     st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
 
 
-#### ------------------------ Examples for Role of pol_strat_advisor ------------------------
-def PolStratAdvHomeNav():
+#### ------------------------ Role of Store_Manager ------------------------
+def StoreManagerHomeNav():
     st.sidebar.page_link(
-        "pages/00_Pol_Strat_Home.py", label="Political Strategist Home", icon="👤"
+        "pages/00_Store_Manager_Home.py", label="Store Manager Home", icon="👤"
     )
 
 
-def WorldBankVizNav():
+def ProductManagementDashNav():
     st.sidebar.page_link(
-        "pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon="🏦"
+        "pages/01_Product_Management_Dash.py", label="Product Management Dashboard", icon="🏦"
     )
 
 
-def MapDemoNav():
-    st.sidebar.page_link("pages/02_Map_Demo.py", label="Map Demonstration", icon="🗺️")
+def OrderManagementDashNav():
+    st.sidebar.page_link("pages/02_Order_Management_Dash.py", label="Order Management Dashboard", icon="🗺️")
 
 
-## ------------------------ Examples for Role of usaid_worker ------------------------
-def ApiTestNav():
-    st.sidebar.page_link("pages/12_API_Test.py", label="Test the API", icon="🛜")
+def CategoryManagementNav():
+    st.sidebar.page_link("pages/05_Category_Management.py.py", label="Category Management Dashboard", icon="🗺️")
 
 
-def PredictionNav():
+## ------------------------ Role of Eco-Conscious Teen ------------------------
+def EcoConsciousTeenHomeNav():
     st.sidebar.page_link(
-        "pages/11_Prediction.py", label="Regression Prediction", icon="📈"
+        "pages/10_Eco-Conscious_Teen_Home.py", label="Eco-Conscious Teen Home", icon="👤"
+    )
+
+def SustainableCategoriesViewNav():
+    st.sidebar.page_link("pages/11_Sustainable_Categories_View.py", label="Sustainable Categories Viewer", icon="🛜")
+
+
+def EcoProductsViewNav():
+    st.sidebar.page_link(
+        "pages/12_Eco_Products_View.py", label="Eco-Friendly Products Viewer", icon="📈"
     )
 
 
-def ClassificationNav():
+def OrdersTrackerNav():
     st.sidebar.page_link(
-        "pages/13_Classification.py", label="Classification Demo", icon="🌺"
+        "pages/13_Orders_Tracker.py", label="Orders Tracker", icon="🌺"
     )
 
 
-#### ------------------------ System Admin Role ------------------------
-def AdminPageNav():
-    st.sidebar.page_link("pages/20_Admin_Home.py", label="System Admin", icon="🖥️")
+#### ------------------------ Sensory Sensitive Shopper Role ------------------------
+def SensorySensitiveShopperNav():
+    st.sidebar.page_link("pages/20_Sensory_Sensitive_Shopper_Home.py", label="Sensory Shopper Home", icon="🖥️")
+
     st.sidebar.page_link(
-        "pages/21_ML_Model_Mgmt.py", label="ML Model Management", icon="🏢"
+        "pages/21_Sensory_Friendly_Products.py", label="Sensory Friendly Products Viewer", icon="🏢"
+    )
+    st.sidebar.page_link(
+        "pages/22_Personalize_Preferences.py", label="Personalized Preferences", icon="🏢"
+    )
+    st.sidebar.page_link(
+        "pages/23_Order_Finder.py", label="Order Finder", icon="🏢"
+    )
+
+#### ------------------------ Trend-Focused Influencer Role ------------------------
+def TrendFocusedInfluencerNav():
+    st.sidebar.page_link("pages/31_Trend-Focused_Influencer_Home.py.py", label="Trend Focused Influencer Home", icon="🖥️")
+    st.sidebar.page_link(
+        "pages/32_Trend_Dashboard.py", label="Trend Dashboard", icon="🏢"
+    )
+    st.sidebar.page_link(
+        "pages/33_Create_Trendy_Order.py", label="Create Trendy Order", icon="🏢"
+    )
+    st.sidebar.page_link(
+        "pages/34_Save_Products.py", label="Save Products", icon="🏢"
     )
 
 
@@ -63,7 +92,7 @@ def SideBarLinks(show_home=False):
     """
 
     # add a logo to the sidebar always
-    st.sidebar.image("assets/logo.png", width=150)
+    st.sidebar.image("assets/clothingStoreLogo.png", width=150)
 
     # If there is no logged in user, redirect to the Home (Landing) page
     if "authenticated" not in st.session_state:
@@ -77,21 +106,28 @@ def SideBarLinks(show_home=False):
     # Show the other page navigators depending on the users' role.
     if st.session_state["authenticated"]:
 
-        # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
-        if st.session_state["role"] == "pol_strat_advisor":
-            PolStratAdvHomeNav()
-            WorldBankVizNav()
-            MapDemoNav()
+        # Show Product Management Link, Order Management Link, and Category Management Link if the user is a Store Manager.
+        if st.session_state["role"] == "Store_Manager":
+            StoreManagerHomeNav()
+            ProductManagementDashNav()
+            OrderManagementDashNav()
+            CategoryManagementNav()
 
-        # If the user role is usaid worker, show the Api Testing page
-        if st.session_state["role"] == "usaid_worker":
-            PredictionNav()
-            ApiTestNav()
-            ClassificationNav()
+        # If the user role is Eco-Conscious Teen, show the following pages
+        if st.session_state["role"] == "Eco-Conscious_Teen":
+            EcoConsciousTeenHomeNav()
+            SustainableCategoriesViewNav()
+            EcoProductsViewNav()
+            OrdersTrackerNav()
 
-        # If the user is an administrator, give them access to the administrator pages
-        if st.session_state["role"] == "administrator":
-            AdminPageNav()
+
+        # If the user is an Sensory Sensitive Shopper, give them access to the sensory sensitive shopper pages
+        if st.session_state["role"] == "Sensory_Sensitive_Shopper":
+            SensorySensitiveShopperNav()
+        
+         # If the user is an Trend-Focused Influencer, give them access to the trend focused influencer pages
+        if st.session_state["role"] == "Trend_Focused_Influencer":
+            TrendFocusedInfluencerNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
