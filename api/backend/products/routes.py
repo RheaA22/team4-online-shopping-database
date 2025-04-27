@@ -1,4 +1,6 @@
 from flask import Blueprint, request, jsonify
+from backend.ml_models.model_products import predict as predict_product
+
 
 products_bp = Blueprint('products_bp', __name__)
 
@@ -127,3 +129,11 @@ def add_review(product_id):
         product_reviews[product_id] = []
     product_reviews[product_id].append(request.json)
     return jsonify({"message": "Review added successfully"}), 201
+
+# PREDICT - ML model prediction
+@products_bp.route('/products/predict/<price>/<feature_count>', methods=['GET'])
+def predict_product_value(price, feature_count):
+    current_app.logger.info(f'Predicting for price={price} and feature_count={feature_count}')
+
+    prediction = predict_product(price, feature_count)
+    return jsonify({"prediction_result": prediction}), 200
