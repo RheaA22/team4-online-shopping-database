@@ -1,5 +1,3 @@
-import logging
-import streamlit as st
 import pandas as pd
 from modules.nav import SideBarLinks
 import requests
@@ -21,16 +19,18 @@ if st.button("🔍 View Current Inventory"):
     response = requests.get(f"{BASE_URL}/products")
     if response.ok:
         st.table(response.json())
+    else:
+        st.error("❌ Failed to fetch products")
 
 # Add new product
 st.subheader("Add New Product")
 with st.form("add_product"):
     name = st.text_input("Product Name")
     price = st.number_input("Price ($)", min_value=0.0)
-    category_id = st.text_input("Category ID")
+    stock = st.checkbox("In Stock", value=True)
     submit = st.form_submit_button("Add Product")
     if submit:
-        data = {"name": name, "price": price, "category_id": category_id}
+        data = {"name": name, "price": price, "stock": stock}
         r = requests.post(f"{BASE_URL}/products", json=data)
         st.success("✅ Product added!" if r.ok else "❌ Error adding product")
 
@@ -38,17 +38,24 @@ with st.form("add_product"):
 st.subheader("Update Product Info")
 with st.form("update_product"):
     pid = st.text_input("Product ID to update")
-    new_price = st.number_input("New Price", min_value=0.0)
-    tags = st.text_input("Tags (comma-separated)")
+    new_name = st.text_input("New Name (leave blank to skip)")
+    new_price = st.number_input("New Price", min_value=0.0, format="%.2f")
     submit_update = st.form_submit_button("Update Product")
     if submit_update:
-        data = {"price": new_price, "tags": tags.split(",")}
-        r = requests.put(f"http://localhost:4000/products/{pid}", json=data)
-        st.success("✅ Product updated!" if r.ok else "❌ Update failed")
+        update_data = {}
+        if new_name:
+            update_data["name"] = new_name
+        if new_price > 0:
+            update_data["price"] = new_price
+        if update_data:
+            r = requests.put(f"{BASE_URL}/products", json=data)
+            st.success("✅ Product updated!" if r.ok else "❌ Update failed")
+        else:
+            st.warning("⚠️ Please enter at least one field to update.")
 
 # Mark product as out of stock
 st.subheader("Mark Product as Out of Stock")
 product_id = st.text_input("Product ID to mark as out of stock")
 if st.button("Mark Out of Stock"):
-    r = requests.delete(f"http://localhost:4000/products/{product_id}")
+    r = requests.delete(f"{BASE_URL}/products", json=data)
     st.success("✅ Product marked out of stock" if r.ok else "❌ Failed")
