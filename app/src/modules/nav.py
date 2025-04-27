@@ -42,7 +42,7 @@ def EcoConsciousTeenHomeNav():
     )
 
 def SustainableCategoriesViewNav():
-    st.sidebar.page_link("pages/11_Sustainable_Categories_View.py", label="Sustainable Categories Viewer", icon="🛜")
+    st.sidebar.page_link("pages/11_Manage_User_Profile.py", label="Manage User Profile", icon="🛜")
 
 
 def EcoProductsViewNav():
@@ -65,10 +65,10 @@ def SensorySensitiveShopperNav():
         "pages/21_Sensory_Friendly_Products.py", label="Sensory Friendly Products Viewer", icon="🏢"
     )
     st.sidebar.page_link(
-        "pages/22_Personalize_Preferences.py", label="Personalized Preferences", icon="🏢"
+        "pages/22_Sensory_Reviews.py", label="Sensory Reviews", icon="🏢"
     )
     st.sidebar.page_link(
-        "pages/23_Order_Finder.py", label="Order Finder", icon="🏢"
+        "pages/23_Clothing_Finder.py", label="Adaptable Clothing Finder", icon="🏢"
     )
 
 #### ------------------------ Trend-Focused Influencer Role ------------------------
@@ -81,7 +81,7 @@ def TrendFocusedInfluencerNav():
         "pages/33_Create_Trendy_Order.py", label="Create Trendy Order", icon="🏢"
     )
     st.sidebar.page_link(
-        "pages/34_Save_Products.py", label="Save Products", icon="🏢"
+        "pages/34_Outfit_Recs.py", label="Outfit Recommendations", icon="🏢"
     )
 
 

@@ -15,12 +15,12 @@ st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
-if st.button('Browse Sustainable Categories', 
+if st.button('Manage My Profile',
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/11_Sustainable_Categories_View.py')
+  st.switch_page('pages/11_Manage_User_Profile.py')
 
-if st.button('View Eco-Friendly Categories', 
+if st.button('View Eco-Friendly Products',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/12_Eco_Products_View.py')
