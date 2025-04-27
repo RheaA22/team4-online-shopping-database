@@ -1,3 +1,5 @@
+import logging
+import streamlit as st
 import pandas as pd
 from modules.nav import SideBarLinks
 import requests
@@ -48,14 +50,14 @@ with st.form("update_product"):
         if new_price > 0:
             update_data["price"] = new_price
         if update_data:
-            r = requests.put(f"{BASE_URL}/products", json=data)
+            r = requests.put(f"{BASE_URL}/products/{pid}", json=update_data)
             st.success("✅ Product updated!" if r.ok else "❌ Update failed")
         else:
             st.warning("⚠️ Please enter at least one field to update.")
 
 # Mark product as out of stock
 st.subheader("Mark Product as Out of Stock")
-product_id = st.text_input("Product ID to mark as out of stock")
+product_id = st.text_input("Product ID to mark out of stock")
 if st.button("Mark Out of Stock"):
-    r = requests.delete(f"{BASE_URL}/products", json=data)
+    r = requests.delete(f"{BASE_URL}/products/{product_id}")
     st.success("✅ Product marked out of stock" if r.ok else "❌ Failed")
