@@ -49,7 +49,7 @@ def create_app():
     app.register_blueprint(categories_bp)
     app.register_blueprint(users_bp)
     app.register_blueprint(orders_bp)
-    app.register_blueprint(sensory)_bp)
+    app.register_blueprint(sensory_bp)
     app.register_blueprint(sustainability_bp)
 
     # Don't forget to return the app object
