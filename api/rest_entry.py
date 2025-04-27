@@ -6,7 +6,6 @@ from backend.products.routes import products_bp
 from backend.users.routes import users_bp
 from backend.categories.routes import categories_bp
 from backend.orders.routes import orders_bp
-from backend.categories.routes import sustainability_bp
 
 import os
 from dotenv import load_dotenv
@@ -48,7 +47,6 @@ def create_app():
     app.register_blueprint(categories_bp)
     app.register_blueprint(users_bp)
     app.register_blueprint(orders_bp)
-    app.register_blueprint(sustainability_bp)
 
     # Don't forget to return the app object
     return app
