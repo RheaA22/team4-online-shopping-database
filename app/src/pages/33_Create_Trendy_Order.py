@@ -1,27 +1,31 @@
+import logging
 import streamlit as st
-import requests
+import pandas as pd
 from modules.nav import SideBarLinks
+import requests
+
+logger = logging.getLogger(__name__)
+BASE_URL = "http://web-api:4000"
 
 SideBarLinks()
-st.header("Create My Trendy Order")
 
-name = st.text_input("Name")
-email = st.text_input("Email")
-products = requests.get("http://localhost:4000/products").json()
+st.header('Sustainable Fashion Products')
 
-selected_skus = st.multiselect(
-    "Choose products to match your vibe:",
-    options=[p["sku"] for p in products],
-    format_func=lambda sku: next((p["name"] for p in products if p["sku"] == sku), sku)
-)
+# Get all products
+response = requests.get(f"{BASE_URL}/products")
+if response.ok:
+    products = response.json()
+    eco_keywords = ["sustainable", "organic", "eco", "recycled", "vegan"]
+    eco_products = [
+        p for p in products if any(word in p['name'].lower() for word in eco_keywords)
+    ]
 
-if st.button("Place Order"):
-    payload = {
-        "customer": {"name": name, "email": email},
-        "products": selected_skus
-    }
-    res = requests.post("http://localhost:4000/orders", json=payload)
-    if res.ok:
-        st.success("Order placed!")
+    if eco_products:
+        for p in eco_products:
+            with st.expander(p["name"]):
+                st.write(f"💰 Price: ${p['price']}")
+                st.write(f"🔢 SKU: {p['sku']}")
     else:
-        st.error("Could not create order.")
+        st.info("No sustainable products found.")
+else:
+    st.error("Could not load products.")
