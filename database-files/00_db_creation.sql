@@ -2,6 +2,12 @@ DROP SCHEMA IF EXISTS `northwind`;
 CREATE SCHEMA IF NOT EXISTS online_shop DEFAULT CHARACTER SET latin1;
 USE online_shop;
 
+CREATE TABLE product_model_params (
+                                      id INT AUTO_INCREMENT PRIMARY KEY,
+                                      sequence_number INT,
+                                      beta_vals TEXT
+);
+
 CREATE TABLE IF NOT EXISTS online_shop.Company (
     companyID INT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
