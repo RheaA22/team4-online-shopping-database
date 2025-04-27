@@ -12,7 +12,7 @@ if response.ok:
     products = response.json()
 
     # Define logic: products in "general" category are considered trendy
-    trendy_products = [p for p in products if p.get('category') == 'general' and p.get('stock', True)]
+    trendy_products = [p for p in products if p.get('category') == 'trendy' and p.get('stock', True)]
 
     if trendy_products:
         st.subheader("✨ Here’s what’s trending right now:")
