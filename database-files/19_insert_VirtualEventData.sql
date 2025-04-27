@@ -1,10 +1,4 @@
-USE db;
-create table VirtualEvent (
-                              eventID INT,
-                              managerID INT,
-                              adID INT,
-                              name VARCHAR(50)
-);
+USE online_shop;
 
 insert into VirtualEvent (eventID, managerID, adID, name) values (1, 1, 1, 'Summer Sale');
 insert into VirtualEvent (eventID, managerID, adID, name) values (2, 2, 2, 'Winter Clearance');

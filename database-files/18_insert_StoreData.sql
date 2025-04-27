@@ -1,10 +1,5 @@
-USE db;
-create table Store (
-                       store_id INT,
-                       name VARCHAR(50),
-                       isOnline VARCHAR(50),
-                       location VARCHAR(50)
-);
+USE online_shop;
+
 
 insert into Store (store_id, name, isOnline, location) values (1, 'VonRueden Group', true, '541 Columbia Court');
 insert into Store (store_id, name, isOnline, location) values (2, 'Smith & Sons', false, '123 Oak Street');

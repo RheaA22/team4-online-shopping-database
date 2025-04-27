@@ -1,8 +1,5 @@
-USE db;
-create table EventAttendees (
-	eventID INT,
-	customerID INT
-);
+USE online_shop;
+
 insert into EventAttendees (eventID, customerID) values (1, 1);
 insert into EventAttendees (eventID, customerID) values (2, 2);
 insert into EventAttendees (eventID, customerID) values (3, 3);

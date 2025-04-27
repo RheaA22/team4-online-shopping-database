@@ -1,8 +1,5 @@
-USE db;
-create table ProductFeatures (
-	SKU VARCHAR(50),
-	feature VARCHAR(50)
-);
+USE online_shop;
+
 insert into ProductFeatures (SKU, feature) values ('57', 'allergen-friendly');
 insert into ProductFeatures (SKU, feature) values ('004', 'soft');
 insert into ProductFeatures (SKU, feature) values ('6', 'waterproof');

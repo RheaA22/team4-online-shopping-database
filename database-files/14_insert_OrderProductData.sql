@@ -1,9 +1,5 @@
-USE db;
-create table OrderProduct (
-	orderID INT,
-	SKU VARCHAR(50),
-	quantity INT
-);
+USE online_shop;
+
 insert into OrderProduct (orderID, SKU, quantity) values (1, '1537', 40);
 insert into OrderProduct (orderID, SKU, quantity) values (2, '594', 9);
 insert into OrderProduct (orderID, SKU, quantity) values (3, '7', 14);
