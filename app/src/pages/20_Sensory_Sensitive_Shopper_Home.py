@@ -16,12 +16,12 @@ if st.button('View Sensory Friendly Products',
              use_container_width=True):
   st.switch_page('pages/21_Sensory_Friendly_Products.py')
 
-if st.button('Build Product Preferences', 
+if st.button('Edit Sensory-Specific Reviews',
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/22_Personalize_Preferences.py')
+  st.switch_page('pages/22_Sensory_Reviews.py')
 
-if st.button('Find My Orders', 
+if st.button('Find Adaptive Clothing',
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/23_Order_Finder.py')
+  st.switch_page('pages/23_Clothing_Finder.py')

@@ -1,48 +1,49 @@
 """
-model01.py is an example of how to access model parameter values that you are storing
-in the database and use them to make a prediction when a route associated with prediction is
-accessed. 
+model_products.py — ML model for predicting product price/popularity.
+Retrieves model parameters from online shopping database for prediction.
 """
+
 from backend.db_connection import db
 import numpy as np
 import logging
 
-
 def train():
-  """
-  You could have a function that performs training from scratch as well as testing (see below).
-  It could be activated from a route for an "administrator role" or something similar. 
-  """
-  return 'Training the model'
+    """
+    Placeholder for training a model based on historical product data.
+    """
+    return 'Training product model...'
 
 def test():
-  return 'Testing the model'
+    """
+    Placeholder for testing model accuracy on test product dataset.
+    """
+    return 'Testing product model...'
 
-def predict(var01, var02):
-  """
-  Retreives model parameters from the database and uses them for real-time prediction
-  """
-  # get a database cursor 
-  cursor = db.get_db().cursor()
-  # get the model params from the database
-  query = 'SELECT beta_vals FROM model1_params ORDER BY sequence_number DESC LIMIT 1'
-  cursor.execute(query)
-  return_val = cursor.fetchone()
+def predict(price, feature_count):
+    """
+    Makes a real-time prediction with params.
+    Predicts "popularity score" or "sales potential".
+    """
+    # get a database cursor
+    cursor = db.get_db().cursor()
 
-  params = return_val['beta_vals']
-  logging.info(f'params = {params}')
-  logging.info(f'params datatype = {type(params)}')
+    # get model parameters
+    query = 'SELECT beta_vals FROM product_model_params ORDER BY sequence_number DESC LIMIT 1'
+    cursor.execute(query)
+    return_val = cursor.fetchone()
 
-  # turn the values from the database into a numpy array
-  params_array = np.array(list(map(float, params[1:-1].split(','))))
-  logging.info(f'params array = {params_array}')
-  logging.info(f'params_array datatype = {type(params_array)}')
+    params = return_val['beta_vals']
+    logging.info(f'Model parameters = {params}')
+    logging.info(f'Params datatype = {type(params)}')
 
-  # turn the variables sent from the UI into a numpy array
-  input_array = np.array([1.0, float(var01), float(var02)])
-  
-  # calculate the dot product (since this is a fake regression)
-  prediction = np.dot(params_array, input_array)
+    # turn DB string into numpy array
+    params_array = np.array(list(map(float, params[1:-1].split(','))))
+    logging.info(f'params array = {params_array}')
+    logging.info(f'params_array datatype = {type(params_array)}')
 
-  return prediction
+    input_array = np.array([1.0, float(price), float(feature_count)])
+
+    prediction = np.dot(params_array, input_array)
+
+    return prediction
 
