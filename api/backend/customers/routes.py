@@ -72,3 +72,5 @@ def predict_value(var01, var02):
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+
