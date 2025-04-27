@@ -1,13 +1,5 @@
 USE db;
-create table Customer (
-	customer_id INT,
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	email VARCHAR(50),
-	age INT,
-	address VARCHAR(50),
-	middle_name VARCHAR(50)
-);
+
 insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (1, 'Mickie', 'Beagin', 'abeagin0@bbc.co.uk', 73, '123 hello lane', 'Ashlin');
 insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (2, 'Brod', 'Tee', 'vtee1@ustream.tv', 61, '565 bye lane', 'Valentijn');
 insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (3, 'Waring', 'Tieraney', 'ntieraney2@reference.com', 21, '564 bye lane', 'Nikolaus');

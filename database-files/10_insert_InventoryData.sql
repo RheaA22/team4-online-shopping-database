@@ -1,10 +1,5 @@
 USE db;
-create table Inventory (
-	storeID INT,
-	SKU VARCHAR(50),
-	reorder_level INT,
-	quantity INT
-);
+
 insert into Inventory (storeID, SKU, reorder_level, quantity) values (1, '73517', 25, 4);
 insert into Inventory (storeID, SKU, reorder_level, quantity) values (2, '7357', 80, 51);
 insert into Inventory (storeID, SKU, reorder_level, quantity) values (3, '8', 76, 24);

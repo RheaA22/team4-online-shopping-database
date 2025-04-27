@@ -1,10 +1,5 @@
 USE db;
-create table Brand (
-	brandID INT,
-	name VARCHAR(50),
-	sustainability_score INT,
-	accessibility_rating INT
-);
+
 insert into Brand (brandID, name, sustainability_score, accessibility_rating) values (1, 'Livefish', 9, 8);
 insert into Brand (brandID, name, sustainability_score, accessibility_rating) values (2, 'Kwilith', 5, 6);
 insert into Brand (brandID, name, sustainability_score, accessibility_rating) values (3, 'Ozu', 4, 10);

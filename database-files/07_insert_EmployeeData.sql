@@ -1,13 +1,5 @@
 USE db;
-create table Employee (
-	employee_id INT,
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	email VARCHAR(50),
-	middle_name VARCHAR(50),
-	role VARCHAR(50),
-	StoreID INT
-);
+
 insert into Employee (employee_id, first_name, last_name, email, middle_name, role, StoreID) values (1, 'Zena', 'Eallis', 'zeallis0@reddit.com', 'Félicie', 'Recruiter', 1);
 insert into Employee (employee_id, first_name, last_name, email, middle_name, role, StoreID) values (2, 'Nyssa', 'Rodgman', 'nrodgman1@nba.com', 'Tú', 'Administrative Assistant IV', 2);
 insert into Employee (employee_id, first_name, last_name, email, middle_name, role, StoreID) values (3, 'Shalom', 'Rivaland', 'srivaland2@nbcnews.com', 'Camélia', 'Research Associate', 3);

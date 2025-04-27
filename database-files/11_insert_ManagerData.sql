@@ -1,8 +1,5 @@
 USE db;
-create table Manager (
-	manager_id INT,
-	managerLevel VARCHAR(50)
-);
+
 insert into Manager (manager_id, managerLevel) values (1, 'Senior');
 insert into Manager (manager_id, managerLevel) values (2, 'Senior');
 insert into Manager (manager_id, managerLevel) values (3, 'Senior');

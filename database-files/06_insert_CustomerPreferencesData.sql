@@ -1,8 +1,5 @@
 USE db;
-create table CustomerPreferences (
-	customerID INT,
-	preference VARCHAR(50)
-);
+
 insert into CustomerPreferences (customerID, preference) values (1, 'seize rich bandwidth');
 insert into CustomerPreferences (customerID, preference) values (2, 'reinvent cross-media vortals');
 insert into CustomerPreferences (customerID, preference) values (3, 'optimize proactive metrics');

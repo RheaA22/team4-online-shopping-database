@@ -1,8 +1,5 @@
 USE db;
-create table AdvertisementViews (
-	adID INT,
-	customerID INT
-);
+
 insert into AdvertisementViews (adID, customerID) values (1, 1);
 insert into AdvertisementViews (adID, customerID) values (2, 2);
 insert into AdvertisementViews (adID, customerID) values (3, 3);

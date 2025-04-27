@@ -1,12 +1,5 @@
 USE db;
-create table Review (
-                        reviewID INT,
-                        customerID INT,
-                        SKU VARCHAR(50),
-                        comment VARCHAR(50),
-                        rating INT,
-                        comfort_score INT
-);
+
 
 INSERT INTO Review (reviewID, customerID, SKU, comment, rating, comfort_score) VALUES (1, 1, '432', 'Cute clothes!', 2, 7);
 INSERT INTO Review (reviewID, customerID, SKU, comment, rating, comfort_score) VALUES (2, 2, '543', 'Loved it!', 5, 9);

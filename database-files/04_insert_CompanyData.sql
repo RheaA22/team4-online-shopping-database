@@ -1,9 +1,5 @@
 USE db;
-create table Company (
-	companyID INT,
-	name VARCHAR(50),
-	phoneNumber VARCHAR(50)
-);
+
 insert into Company (companyID, name, phoneNumber) values (1, 'Topicshots', '779-164-2698');
 insert into Company (companyID, name, phoneNumber) values (2, 'Jaxbean', '467-881-3377');
 insert into Company (companyID, name, phoneNumber) values (3, 'Gabtune', '763-835-5728');

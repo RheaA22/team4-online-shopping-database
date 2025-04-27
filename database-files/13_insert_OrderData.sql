@@ -1,12 +1,5 @@
 USE db;
-create table OrderData (
-                           orderID INT,
-                           customerID INT,
-                           storeID INT,
-                           total DECIMAL(6,2),
-                           status VARCHAR(50),
-                           date DATE
-);
+
 
 insert into OrderData (orderID, customerID, storeID, total, status, date) values (2, 2, 1, 320.75, 'completed', '2025-02-24');
 insert into OrderData (orderID, customerID, storeID, total, status, date) values (3, 3, 2, 545.60, 'completed', '2025-02-25');
