@@ -9,22 +9,22 @@ logger = logging.getLogger(__name__)
 SideBarLinks()
 
 st.header('Sustainable Fashion Products')
+BASE_URL = "http://web-api:4000"
 
-# Get all products
-response = requests.get("http://localhost:4000/products")
-if response.ok:
-    products = response.json()
-    eco_keywords = ["sustainable", "organic", "eco", "recycled", "vegan"]
-    eco_products = [
-        p for p in products if any(word in p['name'].lower() for word in eco_keywords)
-    ]
+    #GET all sustainable products (via category)
+resp = requests.get(f"{BASE_URL}/products/category/sustainable")
+if resp.ok:
+    sensory_products = resp.json()
 
-    if eco_products:
-        for p in eco_products:
+    if sensory_products:
+        for p in sensory_products:
             with st.expander(p["name"]):
-                st.write(f"💰 Price: ${p['price']}")
-                st.write(f"🔢 SKU: {p['sku']}")
+                st.write(f"💲 ${p['price']}")
+                st.write(f"🧾 Brand: {p.get('brand', 'Unknown')}")
+                if p.get("features"):
+                    st.write(f"✨ Features: {', '.join(p['features'])}")
+                st.write(f"📦 Category: {p['category']}")
     else:
-        st.info("No sustainable products found.")
+        st.warning("No eco-friendly items available right now.")
 else:
-    st.error("Could not load products.")
+    st.error("❌ Could not fetch eco-friendly products.")
