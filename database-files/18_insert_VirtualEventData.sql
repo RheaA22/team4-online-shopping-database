@@ -83,7 +83,7 @@ insert into VirtualEvent (eventID, managerID, adID, name) values (80, 5, 80, 'Wi
 insert into VirtualEvent (eventID, managerID, adID, name) values (81, 1, 81, 'Seasonal Shopping Spree');
 insert into VirtualEvent (eventID, managerID, adID, name) values (82, 2, 82, 'Exclusive VIP Sale');
 insert into VirtualEvent (eventID, managerID, adID, name) values (83, 3, 83, 'Holiday Shopping Event');
-insert into VirtualEvent (eventID, managerID, adID, name) values (84, 4, 84, 'Year-End Blowout');
+insert into VirtualEvent (eventID, managerID, adID, name) values (84, 4, 84, 'Year-End');
 insert into VirtualEvent (eventID, managerID, adID, name) values (85, 5, 85, 'New Year Clearance');
 insert into VirtualEvent (eventID, managerID, adID, name) values (86, 1, 86, 'Fifty Percent Off Sale');
 insert into VirtualEvent (eventID, managerID, adID, name) values (87, 2, 87, 'End of Month Specials');

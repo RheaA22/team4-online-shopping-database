@@ -4,7 +4,7 @@ USE online_shop;
 
 CREATE TABLE IF NOT EXISTS online_shop.Company (
     companyID INT PRIMARY KEY,
-    name VARCHAR(50),
+    name VARCHAR(50) NOT NULL,
     phoneNumber VARCHAR(50)
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS online_shop.Store (
 
 CREATE TABLE IF NOT EXISTS online_shop.Brand (
     brandID INT PRIMARY KEY,
-    name VARCHAR(50),
+    name VARCHAR(50) NOT NULL,
     sustainability_score INT,
     accessibility_rating INT
 );
@@ -83,23 +83,6 @@ CREATE TABLE IF NOT EXISTS online_shop.EmployeeInteractions (
     FOREIGN KEY (customer_id) REFERENCES online_shop.Customer(customer_id)
 );
 
-CREATE TABLE IF NOT EXISTS online_shop.EventAttendees (
-    eventID INT,
-    customerID INT,
-    PRIMARY KEY (eventID, customerID),
-    FOREIGN KEY (eventID) REFERENCES online_shop.VirtualEvent(eventID),
-    FOREIGN KEY (customerID) REFERENCES online_shop.Customer(customer_id)
-);
-
-CREATE TABLE IF NOT EXISTS online_shop.Inventory (
-    storeID INT,
-    SKU VARCHAR(50),
-    reorder_level INT,
-    quantity INT,
-    PRIMARY KEY (storeID, SKU),
-    FOREIGN KEY (storeID) REFERENCES online_shop.Store(store_id),
-    FOREIGN KEY (SKU) REFERENCES online_shop.Product(SKU)
-);
 
 CREATE TABLE IF NOT EXISTS online_shop.ManagerInteractions (
     interaction_id INT PRIMARY KEY,
@@ -122,6 +105,18 @@ CREATE TABLE IF NOT EXISTS online_shop.OrderData (
     FOREIGN KEY (storeID) REFERENCES online_shop.Store(store_id)
 );
 
+CREATE TABLE IF NOT EXISTS online_shop.Product (
+                                                   SKU VARCHAR(50) PRIMARY KEY,
+    brandID INT,
+    name VARCHAR(50),
+    category VARCHAR(50),
+    price VARCHAR(50),
+    material VARCHAR(50),
+    trendScore INT,
+    eco_certification VARCHAR(50),
+    FOREIGN KEY (brandID) REFERENCES online_shop.Brand(brandID)
+    );
+
 CREATE TABLE IF NOT EXISTS online_shop.OrderProduct (
     orderID INT,
     SKU VARCHAR(50),
@@ -131,17 +126,16 @@ CREATE TABLE IF NOT EXISTS online_shop.OrderProduct (
     FOREIGN KEY (SKU) REFERENCES online_shop.Product(SKU)
 );
 
-CREATE TABLE IF NOT EXISTS online_shop.Product (
-    SKU VARCHAR(50) PRIMARY KEY,
-    brandID INT,
-    name VARCHAR(50),
-    category VARCHAR(50),
-    price VARCHAR(50),
-    material VARCHAR(50),
-    trendScore INT,
-    eco_certification VARCHAR(50),
-    FOREIGN KEY (brandID) REFERENCES online_shop.Brand(brandID)
-);
+
+CREATE TABLE IF NOT EXISTS online_shop.Inventory (
+                                                     storeID INT,
+                                                     SKU VARCHAR(50),
+    reorder_level INT,
+    quantity INT,
+    PRIMARY KEY (storeID, SKU),
+    FOREIGN KEY (storeID) REFERENCES online_shop.Store(store_id),
+    FOREIGN KEY (SKU) REFERENCES online_shop.Product(SKU)
+    );
 
 CREATE TABLE IF NOT EXISTS online_shop.ProductFeatures (
     SKU VARCHAR(50),
@@ -169,3 +163,11 @@ CREATE TABLE IF NOT EXISTS online_shop.VirtualEvent (
     FOREIGN KEY (managerID) REFERENCES online_shop.Manager(manager_id),
     FOREIGN KEY (adID) REFERENCES online_shop.Advertisement(adID)
 );
+
+CREATE TABLE IF NOT EXISTS online_shop.EventAttendees (
+                                                          eventID INT,
+                                                          customerID INT,
+                                                          PRIMARY KEY (eventID, customerID),
+    FOREIGN KEY (eventID) REFERENCES online_shop.VirtualEvent(eventID),
+    FOREIGN KEY (customerID) REFERENCES online_shop.Customer(customer_id)
+    );
