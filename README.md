@@ -1,6 +1,7 @@
 ## OUR TEAMS INFORMATION
 
 Our names: Mihira Chandrakar, Rhea Aiyar, Mahiya Patil
+
 Link to our video: https://drive.google.com/file/d/1D0bi2NrOlSz-kAyziI6typZM3MeHLueH/view?usp=sharing
 Link to our git: https://github.com/RheaA22/team4-online-shopping-database.git
 
