@@ -20,6 +20,14 @@ products = {
         "price": 79.99,
         "stock": True,
         "category": "sensory"
+    },
+    5: {
+        "name": "Organic Cotton Hoodie",
+        "brand": "GreenThreads",
+        "features": ["Organic Cotton", "Eco-Friendly Dyes", "Sustainable"],
+        "price": 59.99,
+        "stock": True,
+        "category": "sustainable"
     }
 }
 
