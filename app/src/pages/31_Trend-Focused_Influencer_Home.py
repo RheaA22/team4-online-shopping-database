@@ -21,7 +21,7 @@ if st.button('Create a Trend-Focused Order',
              use_container_width=True):
   st.switch_page('pages/33_Create_Trendy_Order.py')
 
-if st.button('View Saved Looks', 
+if st.button('View Trendy Outfit Reccommendations',
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/34_Save_Products.py')
+  st.switch_page('pages/34_Outfit_Recs.py')
