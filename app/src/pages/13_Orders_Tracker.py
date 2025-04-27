@@ -12,17 +12,44 @@ import requests
 SideBarLinks()
 
 st.sidebar.header('Track My Order')
+BASE_URL = "http://web-api:4000"
 
-user_id = st.text_input("Enter your Customer ID", key="customer_id")
-if user_id and st.button("View My Orders"):
-    orders = requests.get("http://localhost:4000/orders").json()
-    my_orders = [o for o in orders if o["customer_id"] == user_id]
+# Step 1: Load products
+response = requests.get(f"{BASE_URL}/products")
+if response.ok:
+    products = response.json()
 
-    if my_orders:
-        for order in my_orders:
-            with st.expander(f"🧾 Order #{order['order_id']} — {order['date']}"):
-                st.write(f"🛍️ Status: {order['status']}")
-                st.write(f"🧑 Customer ID: {order['customer_id']}")
-                st.write(f"💳 Total: ${order['total']}")
+    if products:
+        # Ask user for their user ID
+        user_id = st.number_input("Enter your User ID:", min_value=1, step=1)
+
+        product_names = [p['name'] for p in products if p.get('stock', True)]
+        selected_products = st.multiselect("Select products you want to order:", product_names)
+
+        if st.button("Create Order"):
+            if selected_products and user_id:
+                # Find IDs for the selected products
+                selected_ids = [
+                    idx + 1 for idx, p in enumerate(products)
+                    if p['name'] in selected_products
+                ]
+
+                order_data = {
+                    "user_id": user_id,
+                    "items": selected_ids,
+                    "status": "pending"
+                }
+
+                # POST to create order
+                order_response = requests.post(f"{BASE_URL}/orders", json=order_data)
+
+                if order_response.ok:
+                    st.success("🎉 Order created successfully!")
+                else:
+                    st.error("❌ Failed to create order.")
+            else:
+                st.warning("⚠️ Please enter a valid User ID and select at least one product.")
     else:
-        st.info("No orders found.")
+        st.info("No products available.")
+else:
+    st.error("Could not load products.")
