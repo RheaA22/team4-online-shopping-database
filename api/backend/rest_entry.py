@@ -32,7 +32,7 @@ def create_app():
     app.config['MYSQL_DATABASE_PASSWORD'] = os.getenv('MYSQL_ROOT_PASSWORD').strip()
     app.config['MYSQL_DATABASE_HOST'] = os.getenv('DB_HOST').strip()
     app.config['MYSQL_DATABASE_PORT'] = int(os.getenv('DB_PORT').strip())
-    app.config['MYSQL_DATABASE_DB'] = os.getenv('db').strip()  # Change this to your DB name
+    app.config['MYSQL_DATABASE_DB'] = os.getenv('DB_NAME').strip()  # Change this to your DB name
 
     # Initialize the database object with the settings above.
     app.logger.info('current_app(): starting the database connection')
@@ -41,11 +41,11 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
     app.logger.info('current_app(): registering blueprints with Flask app object.')
-    app.register_blueprint(customers, url_prefix='/customers')
-    app.register_blueprint(products_bp, url_prefix='/products')
-    app.register_blueprint(categories_bp, url_prefix='/categories')
-    app.register_blueprint(users_bp, url_prefix='/users')
-    app.register_blueprint(orders_bp, url_prefix='/orders')
+    app.register_blueprint(customers)
+    app.register_blueprint(products_bp)
+    app.register_blueprint(categories_bp)
+    app.register_blueprint(users_bp)
+    app.register_blueprint(orders_bp)
 
     # Don't forget to return the app object
     return app
