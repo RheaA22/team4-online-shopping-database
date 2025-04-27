@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 
 insert into OrderData (orderID, customerID, storeID, total, status, date) values (2, 2, 1, 320.75, 'completed', '2025-02-24');

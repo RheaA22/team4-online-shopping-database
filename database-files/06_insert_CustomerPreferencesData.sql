@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into CustomerPreferences (customerID, preference) values (1, 'seize rich bandwidth');
 insert into CustomerPreferences (customerID, preference) values (2, 'reinvent cross-media vortals');

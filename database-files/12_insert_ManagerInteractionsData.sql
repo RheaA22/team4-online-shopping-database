@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into ManagerInteractions (interaction_id, manager_id, customer_id, message, date) values (1, 1, 1, 'Let me know if you need help!', '2025-01-23');
 insert into ManagerInteractions (interaction_id, manager_id, customer_id, message, date) values (1, 1, 1, 'Let me know if you need help!', '2025-01-23');

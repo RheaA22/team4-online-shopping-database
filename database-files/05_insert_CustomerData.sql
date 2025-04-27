@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (1, 'Mickie', 'Beagin', 'abeagin0@bbc.co.uk', 73, '123 hello lane', 'Ashlin');
 insert into Customer (customer_id, first_name, last_name, email, age, address, middle_name) values (2, 'Brod', 'Tee', 'vtee1@ustream.tv', 61, '565 bye lane', 'Valentijn');

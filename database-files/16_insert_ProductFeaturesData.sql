@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into ProductFeatures (SKU, feature) values ('57', 'allergen-friendly');
 insert into ProductFeatures (SKU, feature) values ('004', 'soft');

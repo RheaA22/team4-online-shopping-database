@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into AdvertisementViews (adID, customerID) values (1, 1);
 insert into AdvertisementViews (adID, customerID) values (2, 2);

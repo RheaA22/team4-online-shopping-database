@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into EmployeeInteractions (interaction_id, employee_id, customer_id, message, date) values (1, 1, 1, 'Hello, nice to meet you!', '2024-12-10');
 insert into EmployeeInteractions (interaction_id, employee_id, customer_id, message, date) values (1, 1, 1, 'Hello, nice to meet you!', '2024-12-10');

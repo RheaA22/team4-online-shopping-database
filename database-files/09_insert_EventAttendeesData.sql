@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into EventAttendees (eventID, customerID) values (1, 1);
 insert into EventAttendees (eventID, customerID) values (2, 2);

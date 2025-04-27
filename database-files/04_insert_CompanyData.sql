@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Company (companyID, name, phoneNumber) values (1, 'Topicshots', '779-164-2698');
 insert into Company (companyID, name, phoneNumber) values (2, 'Jaxbean', '467-881-3377');

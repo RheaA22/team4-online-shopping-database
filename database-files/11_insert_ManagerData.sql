@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Manager (manager_id, managerLevel) values (1, 'Senior');
 insert into Manager (manager_id, managerLevel) values (2, 'Senior');

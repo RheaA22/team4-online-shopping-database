@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 
 insert into Store (store_id, name, isOnline, location) values (1, 'VonRueden Group', true, '541 Columbia Court');

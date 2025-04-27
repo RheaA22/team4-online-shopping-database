@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Product (SKU, brandID, name, category, price, material, trendScore, eco_certification) values ('99402', 1, 'leather skirt', 'bottoms', '20.00', 'leather', 10, true);
 insert into Product (SKU, brandID, name, category, price, material, trendScore, eco_certification) values ('442', 2, 'navy-blue jeans', 'bottoms', '50.00', 'denim', 10, false);

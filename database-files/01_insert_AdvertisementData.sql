@@ -1,6 +1,5 @@
-CREATE DATABASE IF NOT EXISTS db;
 
-USE db;
+USE online_shop;
 
 insert into Advertisement (adID, companyID, managerID, content, target_segment) values (1, 1, 1, 'e-enable enterprise interfaces', 'Home');
 insert into Advertisement (adID, companyID, managerID, content, target_segment) values (2, 2, 2, 'extend real-time e-commerce', 'Beauty');

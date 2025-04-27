@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Brand (brandID, name, sustainability_score, accessibility_rating) values (1, 'Livefish', 9, 8);
 insert into Brand (brandID, name, sustainability_score, accessibility_rating) values (2, 'Kwilith', 5, 6);

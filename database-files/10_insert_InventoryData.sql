@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Inventory (storeID, SKU, reorder_level, quantity) values (1, '73517', 25, 4);
 insert into Inventory (storeID, SKU, reorder_level, quantity) values (2, '7357', 80, 51);

@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 
 INSERT INTO Review (reviewID, customerID, SKU, comment, rating, comfort_score) VALUES (1, 1, '432', 'Cute clothes!', 2, 7);

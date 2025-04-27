@@ -1,4 +1,4 @@
-USE db;
+USE online_shop;
 
 insert into Employee (employee_id, first_name, last_name, email, middle_name, role, StoreID) values (1, 'Zena', 'Eallis', 'zeallis0@reddit.com', 'Félicie', 'Recruiter', 1);
 insert into Employee (employee_id, first_name, last_name, email, middle_name, role, StoreID) values (2, 'Nyssa', 'Rodgman', 'nrodgman1@nba.com', 'Tú', 'Administrative Assistant IV', 2);
